@@ -1,4 +1,3 @@
-
 def sort_by_AI(arr):
     """Сортировка слиянием."""
     if len(arr) > 1:
