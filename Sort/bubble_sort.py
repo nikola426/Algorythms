@@ -1,14 +1,15 @@
 def bubble_sort(nums):
-    flag = True
     n = len(nums)
 
-    while flag:
+    for j in range(n - 1):
         flag = False
-
-        for index in range(n - 1):
+        for index in range(n - 1 - j):
             if nums[index] > nums[index + 1]:
                 nums[index], nums[index + 1] = nums[index + 1], nums[index]
                 flag = True
+
+        if not flag:
+            break
 
 
 arr = [2, -9, 87, 54, 0]
