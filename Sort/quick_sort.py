@@ -1,3 +1,5 @@
+"""Быстрая сортировка"""
+
 def sort(left, right):
     main_index = left
 

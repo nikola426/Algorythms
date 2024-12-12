@@ -1,3 +1,5 @@
+"""Сортировка пузырьком"""
+
 def bubble_sort(nums):
     n = len(nums)
 
