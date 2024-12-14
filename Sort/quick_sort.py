@@ -1,21 +1,23 @@
-"""Быстрая сортировка"""
+def quicksort(arr, left, right):
+    if left < right:
+        pivot_index = partition(arr, left, right)
+        quicksort(arr, left, pivot_index - 1)  # Рекурсивно сортируем левую часть
+        quicksort(arr, pivot_index + 1, right)  # Рекурсивно сортируем правую часть
 
-def sort(left, right):
-    main_index = left
+def partition(arr, left, right):
+    pivot = arr[right]  # Выбираем последний элемент в качестве опорного
+    i = left - 1  # Индекс меньшего элемента
 
-    for index in range(left + 1, right + 1):
-        if nums[index] < nums[main_index]:
-            nums.insert(main_index, nums.pop(index))
-            main_index += 1
+    for j in range(left, right):
+        if arr[j] < pivot:  # Если текущий элемент меньше опорного
+            i += 1  # Увеличиваем индекс меньшего элемента
+            arr[i], arr[j] = arr[j], arr[i]  # Обмениваем элементы
 
-    if left < (main_index - 1):
-        sort(left, main_index - 1)
+    # Перемещаем опорный элемент на правильную позицию
+    arr[i + 1], arr[right] = arr[right], arr[i + 1]
+    return i + 1  # Возвращаем индекс опорного элемента
 
-    if (main_index + 1) < right:
-        sort(main_index + 1, right)
-
-
+# Пример использования
 nums = [-4, 0, 23, -9, -4, 77, 0, 33, -9]
-
-sort(0, len(nums) - 1)
+quicksort(nums, 0, len(nums) - 1)
 print(nums)
