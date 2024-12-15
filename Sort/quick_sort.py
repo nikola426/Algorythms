@@ -22,7 +22,7 @@ def quicksort(arr, left, right):
 
 
 def partition(arr, left, right):
-    pivot = arr[right] # Выбираем случайный элемент в качестве опорного
+    pivot = arr[right] # Выбираем последний элемент в качестве опорного
     i = left - 1  # Индекс меньшего элемента
 
     for j in range(left, right):
