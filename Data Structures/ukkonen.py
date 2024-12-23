@@ -107,8 +107,7 @@ class SuffixTree:
             elif self.active_node != self.root:
                 # Переходим по суффиксной ссылке, если мы не в корне
                 self.active_node = (self.last_new_node.suffix_link
-                                    if last_new_node is not None else
-                                    root)
+                                    if self.last_new_node is not None else self.root)
 
 
 # Пример использования:
