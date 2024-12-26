@@ -1,3 +1,5 @@
+"""Обход несвязного графа"""
+
 class Graph:
     def __init__(self, edges):
         self.adjacency_list = {}
