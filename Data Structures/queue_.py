@@ -1,6 +1,6 @@
 """Реализация очереди с помощью списка"""
 
-class Queue:
+class Q:
     def __init__(self):
         self.items = []
 
@@ -23,30 +23,29 @@ class Queue:
         return len(self.items)
 
 # Пример использования
-queue = Queue()
-queue.enqueue(1)
-queue.enqueue(2)
-print(queue.dequeue())  # Вывод: 1
-print(queue.size())     # Вывод: 1
+q = Q()
+q.enqueue(1)
+q.enqueue(2)
+print(q.dequeue())  # Вывод: 1
+print(q.size())     # Вывод: 1
 
 
 """Реализация очереди с помощью класса deque"""
 
 from collections import deque
 
-queue = deque()
+d = deque()
 
 # Добавление элементов
-queue.append('task1')
-queue.append('task2')
+d.append('task1')
+d.append('task2')
 
 # Удаление элемента
-print(queue.popleft())  # Вывод: 'task1'
-print(len(queue))       # Вывод: 1
+print(d.popleft())  # Вывод: 'task1'
+print(len(d))       # Вывод: 1
 
 
 """Реализация очереди с помощью класса Queue"""
-
 from queue import Queue
 
 q = Queue()
